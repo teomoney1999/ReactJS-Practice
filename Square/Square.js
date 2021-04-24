@@ -1,9 +1,6 @@
 import React, {Component} from 'react'; 
 
 class Square extends Component{
-    state = {
-        value: null,
-    }
 
     click = () => {
         this.setState({value: "X"});
@@ -12,8 +9,10 @@ class Square extends Component{
     render(){
         return (
             <button className='square' 
-                    onClick={this.click} 
-            >{ this.state.value }</button>
+                    onClick={() => this.props.onClick()}
+            >
+            { this.props.value }
+            </button>
         )
     }
 }
